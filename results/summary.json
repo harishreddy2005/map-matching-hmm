@@ -28,7 +28,7 @@
     "online_arc_error": 0.09631602308033733,
     "flush_points": 7,
     "points": 2260,
-    "seconds_per_1000": 0.5372788053120804
+    "seconds_per_1000": 0.4902995575208575
   },
   "baseline_test": {
     "arc_error": 0.2991150442477876,

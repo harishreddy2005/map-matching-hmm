@@ -24,7 +24,7 @@ Python modules separate loading, candidates, features, decoding, learning, evalu
 
 ## Results
 
-Validation selects T=10, N=7 (validation directed error 5.05%). On 2,260 held-out points, directed-arc error is 9.60%, edge error 4.60%, and online-only directed error 9.63%; seven EOF points are flushed. Nearest-road edge error is 8.01%. Directed baseline error is 29.91%, but its forward-direction tie rule disadvantages that baseline. Matching takes 0.537 s/1,000 points on this machine, excluding loading and visualization.
+Validation selects T=10, N=7 (validation directed error 5.05%). On 2,260 held-out points, directed-arc error is 9.60%, edge error 4.60%, and online-only directed error 9.63%; seven EOF points are flushed. Nearest-road edge error is 8.01%. Directed baseline error is 29.91%, but its forward-direction tie rule disadvantages that baseline. Matching takes 0.490 s/1,000 points on this machine, excluding loading and visualization.
 
 ## Conclusions
 

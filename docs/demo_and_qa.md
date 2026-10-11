@@ -20,7 +20,7 @@
 - **What does L1 do?** Encourages sparse coefficients. Balanced class weights correct many more negative candidates than positives. Standardization is fitted on each training fold only.
 - **How is leakage prevented?** First 60% training, next 10% selection, final 30% test; ten expanding training folds with a 15-reading gap. GPS features are causal. Route labels are offline references, never decoder inputs. One trip and related roads can still bias evaluation.
 - **Where did truth come from?** The published ordered route is aligned to points using monotone distance DP. These are derived proxy labels, not independent surveyed point truth. Inspect both map and route-progress diagnostics.
-- **What are the measured results?** T=10, N=7: directed error 9.60%, edge error 4.60%; nearest-road edge error 8.01%. Matcher 0.537 s/1,000 points on this machine; loading/plotting excluded.
+- **What are the measured results?** T=10, N=7: directed error 9.60%, edge error 4.60%; nearest-road edge error 8.01%. Matcher 0.490 s/1,000 points on this machine; loading/plotting excluded.
 - **Why report edge error?** It ignores direction; a geometric nearest-road method cannot resolve equal-distance forward/reverse arcs. Its directed error depends on an arbitrary forward tie rule.
 - **Why does dropping discrepancy help?** Whole-road midpoint distance can be a poor displacement proxy for long/curved edges. The test result is descriptive, not used to retroactively select the submitted model.
 - **How is backtrack history handled?** A visited set of committed states in the current window preserves first-order Viterbi. Training uses route-label history; inference uses its own commitments. This mismatch is disclosed.
