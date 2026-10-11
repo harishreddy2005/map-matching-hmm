@@ -1,0 +1,9 @@
+numpy>=2.0
+scipy>=1.14
+shapely>=2.0
+pyproj>=3.6
+scikit-learn>=1.5
+matplotlib>=3.9
+reportlab>=4.2
+python-pptx>=1.0
+pypdf>=6.0

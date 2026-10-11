@@ -1,0 +1,12 @@
+.venv/
+.tools/
+__pycache__/
+*.pyc
+data/
+results/cache.npz
+results/prepared.pkl
+reference/
+.pytest_cache/
+.mplconfig/
+submission/
+verification/

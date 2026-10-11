@@ -1,0 +1,99 @@
+{
+  "dataset": {
+    "gps_points": 7531,
+    "road_edges": 158167,
+    "directed_arcs": 306182,
+    "route_edges": 576,
+    "elapsed_seconds": 7611.0,
+    "sampling_median_seconds": 1.0,
+    "sampling_gap_count": 4
+  },
+  "training_points": 4518,
+  "validation_points": 753,
+  "test_points": 2260,
+  "candidate_coverage": 0.999734431018457,
+  "test_candidate_coverage": 0.9991150442477876,
+  "candidate_fallbacks": 0,
+  "mean_candidates": 7.369804806798566,
+  "selected_by_validation": {
+    "T": 10,
+    "N": 7,
+    "validation_arc_error": 0.05046480743691899
+  },
+  "selected_test": {
+    "T": 10,
+    "N": 7,
+    "arc_error": 0.09601769911504425,
+    "edge_error": 0.04601769911504425,
+    "online_arc_error": 0.09631602308033733,
+    "flush_points": 7,
+    "points": 2260,
+    "seconds_per_1000": 0.5372788053120804
+  },
+  "baseline_test": {
+    "arc_error": 0.2991150442477876,
+    "edge_error": 0.08008849557522124,
+    "online_arc_error": 0.2991150442477876,
+    "flush_points": 0,
+    "points": 2260
+  },
+  "ablations": [
+    {
+      "feature": "full",
+      "arc_error": 0.09601769911504425,
+      "edge_error": 0.04601769911504425,
+      "online_arc_error": 0.09631602308033733,
+      "flush_points": 7,
+      "points": 2260
+    },
+    {
+      "feature": "without distance",
+      "arc_error": 0.41858407079646015,
+      "edge_error": 0.40309734513274337,
+      "online_arc_error": 0.41988459831335995,
+      "flush_points": 7,
+      "points": 2260
+    },
+    {
+      "feature": "without heading",
+      "arc_error": 0.2597345132743363,
+      "edge_error": 0.06725663716814159,
+      "online_arc_error": 0.2574345317354638,
+      "flush_points": 7,
+      "points": 2260
+    },
+    {
+      "feature": "without speed",
+      "arc_error": 0.1,
+      "edge_error": 0.05265486725663717,
+      "online_arc_error": 0.10031069684864626,
+      "flush_points": 7,
+      "points": 2260
+    },
+    {
+      "feature": "without backtrack",
+      "arc_error": 0.17964601769911503,
+      "edge_error": 0.12964601769911505,
+      "online_arc_error": 0.18020417221482468,
+      "flush_points": 7,
+      "points": 2260
+    },
+    {
+      "feature": "without discrepancy",
+      "arc_error": 0.08938053097345133,
+      "edge_error": 0.03893805309734513,
+      "online_arc_error": 0.08965823346648913,
+      "flush_points": 7,
+      "points": 2260
+    }
+  ],
+  "route_alignment_median_distance_metres": 2.7513519232115597,
+  "limitations": [
+    "Per-point labels are offline monotone distance alignment to published route, not independent GPS labels.",
+    "No shortest paths, connectivity enforcement, or route-length mismatch metric; disconnected predictions are possible.",
+    "SVM coefficients become uncalibrated positive potentials; negative coefficients clipped and intercept discarded.",
+    "End-of-stream flush has less future context; online-only error also reported.",
+    "Dataset includes sampling gaps; N is observation count, delay is only approximately N seconds.",
+    "Nearest-segment directed baseline breaks ties with forward direction; edge error is fairer for geometric baseline."
+  ]
+}

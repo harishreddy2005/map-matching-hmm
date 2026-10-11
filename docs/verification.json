@@ -1,0 +1,57 @@
+{
+  "archive_sha256": "c0d9416ff97420cb084a428f1a6fab79a67fb8f8ba3daa363f5e292ffe516474",
+  "isolated_workdir": "C:\\ML_\\verification\\20261011_185824",
+  "checks": "7 unit tests; cache-free offline demo; document generation; page and slide counts; dataset/labels/features sanity",
+  "pdf_pages": {
+    "writeup.pdf": 2,
+    "writeup_one_page.pdf": 1,
+    "presentation.pdf": 12
+  },
+  "slides": 12,
+  "steps": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_committed_outputs_are_causal (test_core.ViterbiTests.test_committed_outputs_are_causal) ... ok\ntest_delayed_decision_uses_future_evidence (test_core.ViterbiTests.test_delayed_decision_uses_future_evidence) ... ok\ntest_validation_and_flush (test_core.ViterbiTests.test_validation_and_flush) ... ok\ntest_zero_lag_is_causal (test_core.ViterbiTests.test_zero_lag_is_causal) ... ok\ntest_directed_heading_and_high_speed_gate (test_features.FeatureTests.test_directed_heading_and_high_speed_gate) ... ok\ntest_stopped_heading_is_neutral (test_features.FeatureTests.test_stopped_heading_is_neutral) ... ok\ntest_visited_penalty_exempts_staying (test_features.FeatureTests.test_visited_penalty_exempts_staying) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.067s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "run_demo.py",
+        "--T",
+        "10",
+        "--N",
+        "7",
+        "--slice",
+        "5300",
+        "5600"
+      ],
+      "exit_code": 0,
+      "stdout": "Loading benchmark and aligning route labels...\n{'gps_points': 7531, 'road_edges': 158167, 'directed_arcs': 306182, 'route_edges': 576, 'elapsed_seconds': 7611.0, 'sampling_median_seconds': 1.0, 'sampling_gap_count': 4}\n{\n  \"T\": 10,\n  \"N\": 7,\n  \"arc_error\": 0.06333333333333334,\n  \"edge_error\": 0.03333333333333333,\n  \"online_arc_error\": 0.051194539249146756,\n  \"flush_points\": 7,\n  \"points\": 300,\n  \"matcher_seconds\": 0.1508291000063764\n}\nOpen results/demo_map.html (fully offline).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/build_deliverables.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Generated two-page and one-page write-ups, 12-slide PPTX/PDF, source text and Q&A.\n",
+      "stderr": ""
+    }
+  ],
+  "dependency_note": "Isolated source/data copy uses the installed project interpreter; no independent OS/machine test.",
+  "route_alignment_start_end": [
+    0,
+    575
+  ]
+}

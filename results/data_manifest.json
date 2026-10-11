@@ -1,0 +1,17 @@
+{
+  "gps_data.txt": {
+    "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2017/07/gps_data.txt",
+    "bytes": 354110,
+    "sha256": "d68a05a15564d961c0a0a4f2e905362e9dd86772ece98cc0b6835cf41d705bf6"
+  },
+  "road_network.zip": {
+    "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2017/07/road_network.zip",
+    "bytes": 7991447,
+    "sha256": "6e561e0bb347f463244718cc60a1ae6720de3eaad88bd12d0474d7707d71ccaa"
+  },
+  "ground_truth_route.txt": {
+    "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2017/07/ground_truth_route.txt",
+    "bytes": 9246,
+    "sha256": "539c380d20e11d71bbf4ad14d54e0377fd583ed545546fdfc9a910e3f7ea1ef9"
+  }
+}
