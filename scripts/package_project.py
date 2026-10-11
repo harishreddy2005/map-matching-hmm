@@ -10,10 +10,10 @@ def main():
     destination.mkdir(exist_ok=True)
     archive=destination/'map_matching_project.zip'
     roots=['src','scripts','tests','docs','results','data']
-    files=[ROOT/name for name in ['README.md','requirements.txt','requirements-lock.txt','.gitignore','run_demo.py','team.json']]
+    files=[ROOT/name for name in ['README.md','requirements.txt','requirements-lock.txt','.gitignore','.gitattributes','run_demo.py','team.json']]
     for name in roots:
         files.extend(p for p in (ROOT/name).rglob('*') if p.is_file() and '__pycache__' not in p.parts
-                     and p.suffix not in ['.pkl','.pyc','.zip'])
+                     and p.suffix not in ['.pkl','.pyc','.zip'] and p.name != 'verification.json')
     with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as out:
         for path in sorted(files):
             out.write(path,str(path.relative_to(ROOT)))
